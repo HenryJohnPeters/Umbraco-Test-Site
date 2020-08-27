@@ -3,36 +3,15 @@
 @{
 	Layout = "master.cshtml";
 }
-<html>
-<section id="banner">
-    <div class="container">
-
-        <header class="major special">
-            <h2>@Model.Value("pageTitle")</h2>
-           <p>@Model.Value("bodyText")</p>
-           
-           
-
-        </header>
-
-       <form  >
-           
-    <p class="major special" for="fname">First name:</p>
-     <input type="text" id="fname" name="fname"><br>
-     
-     <p class="major special" for="lname">Last name:</p>
-     <input type="text" id="lname" name="lname"><br>
-     
-     <p class="major special" for="lname">Email:</p>
-     <input  type="text" id="lname" name="lname"><br>
-     
-     <p class="major special" for="lname">Message:</p>
-     <input type="text" id="lname" name="lname"><br>
-     
-     
-</form>
-    
-    </div>
-</section>
-
-</html>
+ 
+<div class="container">
+    @if (TempData["ContactSuccess"] != null && (bool)TempData["ContactSuccess"])
+    {
+        <p>Your message was sent successfully</p>
+    }
+    else
+    {
+        Html.RenderAction("RenderForm", "ContactSurface");
+    }
+</div>
+ 

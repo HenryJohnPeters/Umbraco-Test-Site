@@ -1,22 +1,52 @@
-﻿@inherits UmbracoViewPage<CBWeb.Models.ContactModel>
+﻿
+@inherits UmbracoViewPage<CBWeb.Models.ContactModel>
 
 @using (Html.BeginUmbracoForm("SubmitForm", "ContactSurface", FormMethod.Post))
 {
+    // takes action used with created controller
+
+
     @Html.AntiForgeryToken()
-    @Html.ValidationSummary()
 
-    @Html.LabelFor(m => m.FirstName);
-    @Html.TextBoxFor(m => m.FirstName)
+    <div class="form-group">
+        
+        @Html.ValidationSummary()
+    </div>
 
-    @Html.LabelFor(m => m.LastName);
-    @Html.TextBoxFor(m =>m.LastName)
+    <div class="form-group">
+        <div class="col-xs-3">
+            @Html.LabelFor(m => m.FirstName)
+        </div>
+        <div class="col-xs-9">
+            @Html.TextBoxFor(m => m.FirstName)
+        </div>
+    </div>
 
-    @Html.LabelFor(m => m.EmailAddress);
-    @Html.TextBoxFor(m => m.FirstName)
+    <div class="form-group">
+        <div class="col-xs-3">
+            @Html.LabelFor(m => m.LastName)
+        </div>
+        <div class="col-xs-9">
+            @Html.TextBoxFor(m => m.LastName)
+        </div>
+    </div>
 
-    @Html.LabelFor(m => m.Message);
-    @Html.TextAreaFor(m => m.FirstName)
+    <div class="form-group">
+        <div class="col-xs-3">
+            @Html.LabelFor(m => m.EmailAddress)
+        </div>
+        <div class="col-xs-9">
+            @Html.TextBoxFor(m => m.EmailAddress)
+        </div>
+    </div>
 
-    <button> Submit</button>
-
+    <div class="form-group">
+        <div class="col-xs-3">
+            @Html.LabelFor(m => m.Message)
+        </div>
+        <div class="col-xs-9">
+            @Html.TextAreaFor(m => m.Message)
+        </div>
+    </div>
+    <button>Submit</button>
 }

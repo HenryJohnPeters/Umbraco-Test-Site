@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+	Layout = "master.cshtml";
+}
+
+@* the fun starts here *@
+
+    <div class="container">
+        @if (TempData["ContactSuccess"] != null && (bool)TempData["ContactSuccess"])
+        {
+            <p>Your message was sent successfully</p>
+        }
+        else
+        {
+            // calls contact surface conroller - RenderForm(()
+            Html.RenderAction("RenderForm", "ContactSurface");
+        }
+    </div>
