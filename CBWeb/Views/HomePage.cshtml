@@ -1,0 +1,48 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+	Layout = "master.cshtml";
+}
+
+
+<!DOCTYPE HTML>
+<!--
+	Retrospect by TEMPLATED
+ 
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>HP Umbraco Example</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body class="landing">
+
+		
+
+		<!-- Banner -->
+			<section id="banner">
+			 
+				
+				<h2> @Model.Value("pageTitle")</h2>
+				
+				<p>@Model.Value("bodyText", fallback: Fallback.ToDefaultValue, defaultValue: new HtmlString("default text"))</p>
+				<ul class="actions">
+				    
+				    
+				
+				</ul>
+			</section>
+
+
+
+	
+ 
+
+	</body>
+</html>

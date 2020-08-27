@@ -1,0 +1,47 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+	Layout = null;
+}
+
+@* the fun starts here *@
+
+<!-- Header -->
+             <section>
+			<header id="header" class="alt">
+				<a href="#nav">Menu</a>
+			</header>
+			</section >
+
+	 
+			<nav id="nav">
+				<ul class="links">
+				 <li><a href="/">Home</a></li>
+                 <li><a href="/Contact">Contact</a></li>
+                <li><a href="/articles">articles</a></li>
+				</ul>
+			</nav>
+			
+			
+			@RenderBody()
+			
+				<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						 
+					</ul>
+					<ul class="copyright">
+						<li>@Model.Value("footerText", fallback: Fallback.ToAncestors)</li>
+						
+					</ul>
+				</div>
+			</footer>
+			
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/skel.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="/assets/js/main.js"></script>
+			
+				<link rel="stylesheet" href="/assets/css/main.css" />
